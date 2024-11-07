@@ -1,0 +1,1439 @@
+/* Ajoutez une règle pour empêcher le débordement horizontal */
+body {
+    overflow-x: hidden;
+}
+
+/*flexbox responsive*/
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex($values) {
+-webkit-box-flex: $values;
+-moz-box-flex:  $values;
+-webkit-flex:  $values;
+-ms-flex:  $values;
+flex:  $values;
+}
+
+@mixin order($val) {
+-webkit-box-ordinal-group: $val;  
+-moz-box-ordinal-group: $val;     
+-ms-flex-order: $val;     
+-webkit-order: $val;  
+order: $val;
+}
+
+.wrapper {
+@include flexbox();
+}
+
+.item {
+@include flex(1 200px);
+@include order(2);
+}
+
+/* intégration des police */
+
+@font-face{
+	font-family: "Bebas_Neue";
+	src: url("./font/BebasNeue-Regular.ttf") format("truetype");
+}
+@font-face{
+	font-family: "Sans_Source_Pro";
+	src: url("./font/SourceSansPro-Regular.otf") format("opentype");
+}
+
+/* générale */
+
+html{
+    height: auto;
+}
+body{
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+
+
+        /*----- Nav bare -----*/
+        /*----- Nav bare -----*/
+        /*----- Nav bare -----*/
+        /*----- Nav bare -----*/
+
+.contener1 {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    height: 50px;
+    width: 99%;
+    margin-right: 10px;
+    background-color: white;
+    margin: 2% 0;
+}
+
+.head {
+    margin: 10px;
+    margin-top: 1.5%;
+    font-family: Bebas_Neue;
+}
+
+.head a {
+    color: black;
+    text-decoration: none; 
+    font-family: Bebas_Neue;
+}
+
+.head a:hover {
+    color: #8117EB;
+}
+
+.logo {
+    height: 50px;
+    padding: 10px 30px;
+}
+
+.tete {
+    display: none;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+}
+
+.tete2 {
+    display: flex; 
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+}
+
+.tete2 ul {
+    list-style-type: none;
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end; 
+    margin-left: auto; 
+    padding-left: 0;
+}
+
+.tete2 ul > li {
+    font-size: 24px;
+    margin-right: 20px; 
+}
+@media screen and (max-width: 1024px) {
+    .tete {
+        display: flex; 
+        align-items: center;
+    }
+    .tete2 {
+        display: none; 
+    }
+}
+
+/* Sidenav menu */
+#openBtn {
+    position: absolute; 
+    right: 10px; 
+    top: 0; 
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    top:-1%;
+    right: -3%; 
+    background-color: transparent; 
+    overflow-x: hidden;
+    transition: 0.5s; 
+    padding-top: 60px;
+    z-index: 999; 
+}
+
+/* Sidenav menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: 000;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color:#8117EB;
+}
+
+.sidenav ul {
+    display: none; 
+    flex-direction: column; 
+    top: 10%;
+    right: 0;
+    width: 200px; 
+    background-color: white; 
+    padding-left: 0px;
+    padding-right: 10%;
+    z-index: 998; 
+}
+
+.sidenav ul li {
+    list-style-type: none;
+}
+
+
+/* Active class */
+.sidenav.active {
+    width: 250px;
+}
+
+.sidenav.active ul {
+    display: flex; 
+}
+
+/* Close btn */
+.sidenav .close {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+    font-size: 46px;
+    color: black;
+}
+
+.burger-icon {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+}
+
+/* Icône burger */
+.burger-icon span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+  
+        /*------------------------- hero page -------------------------*/
+        /*------------------------- hero page -------------------------*/
+        /*------------------------- hero page -------------------------*/
+
+
+.HeroPage {
+    margin-top: 10px;
+    height: auto;
+	text-align: left;
+	width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.degrade {
+    background: linear-gradient(to bottom, #8117EB, #A800E4);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-top: 2px;
+}
+
+.degrade:before {
+    content: "";
+    position: absolute;
+    top: calc(100% - 70px); 
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 70px 100vw 0  0 ;
+    border-color: #fff transparent  transparent  transparent ;
+    transform: rotate(180deg);
+    transform: scaleY(-1);
+    margin-top: 2px;
+}
+
+.BlocBlanc{
+    background-color: white;
+    width: 101.2%;
+    height: 200px;
+    position: absolute;
+    transform: rotate(5deg);
+    bottom: 0;
+    right: 0;
+    
+
+}
+
+.Pgauche {
+    flex: 1 1 50%; 
+    color: white;
+    padding: 20px;
+    margin: 3% 3%; 
+}
+
+h1{
+    font-family: Bebas_Neue;
+    font-size: 64px;
+    margin-top: 20px;
+}
+
+.Phero{
+    font-family: Sans_Source_Pro;
+    font-size: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.Pdroite {
+    width: 35%;
+    flex: 1 1 50%; 
+    margin: 3% 3%; 
+    height: 550px;
+    align-items: center;
+}
+
+.img {
+    width: 100%;
+    height: 100%; 
+    object-fit: contain; 
+    object-position: center;
+}
+
+.bientot {
+    background-color: #ffffff; 
+    color: #000000;
+    padding: 10px 20px; 
+    border: 2px solid #000000;
+    border-radius: 30px; 
+    cursor: pointer; 
+    text-align: center; 
+    display: inline-block; 
+    text-decoration: none;
+    font-family: Sans_Source_Pro;
+}
+
+
+.bientot:hover {
+    background-color: #000000; 
+    color: #ffffff; 
+}
+
+.BoutonApple {
+    margin-right: 10px; 
+    font-family:Bebas_Neue ;
+    padding-top: 30px;
+    font-size: 20px;
+    float: left;
+    margin-right: 10%;
+}
+
+.BoutonAndroid {
+    float: left;
+    font-family:Bebas_Neue ;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.boutonApp,
+.boutonPlay {
+    display: block;
+    width: 148px; 
+    height: auto; 
+    text-indent: -9999px; 
+    background: none; 
+    border: none;
+}
+
+.boutonApp {
+    background-image: url("./img/app_store.png"); 
+    width: 150px;
+    height: 43px; 
+    object-fit: cover; 
+    overflow: hidden; 
+}
+
+.boutonPlay {
+    background-image: url("./img/google_play.png"); 
+    width: 150px; 
+    height: 42px; 
+    object-fit: cover; 
+    overflow: hidden; 
+    clip-path: inset(0 2px 0 2px);
+}
+
+@media screen and (max-width: 1024px) {
+    .pc {
+        display: none;
+    }
+    
+    .tel {
+        display: flex;
+        height: auto;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .Pgauche,
+    .Pdroite {
+        flex: 1 1 100%; 
+        margin: 3% 3%; 
+        width: 100%;
+        align-items: center;
+        height: auto;
+    }
+
+    .Pgauche {
+        order: 2; 
+        margin-bottom: 20%;
+    }
+
+    .Pdroite {
+        order: 1; 
+        height: 50%;
+        flex: 1 1 50%;
+        margin: 3% auto;
+        max-width: 50%;
+    }
+    h1{
+        margin-top: 0;
+    }
+    .img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .Phero {
+        font-family: Sans_Source_Pro;
+        font-size: 20px;
+        max-width: 80%;
+        word-wrap: break-word; 
+    }
+
+    .boutonContainer {
+        display: flex;
+        justify-content: space-between; 
+    }
+    .boutonApp,
+    .boutonPlay{
+        display: block;
+        width: calc(150px - 2%); 
+        height: auto; 
+        text-indent: -9999px; 
+        background: none; 
+        border: none; 
+        object-fit: cover; 
+        overflow: hidden; 
+        clip-path: inset(0 2px 0 2px);
+    }
+    .BoutonAndroid,
+    .BoutonApple {
+        margin-right: 10px; 
+        font-family:Bebas_Neue ;
+        font-size: 20px;
+        padding-top: 10px;
+    }
+    .BoutonAndroid{
+        margin-top: 0;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .boutonContainer {
+        display: flex;
+        justify-content: space-between; 
+    }
+    .boutonApp,
+    .boutonPlay{
+        display: block;
+        width: calc(150px - 6%); 
+        height: auto; 
+        text-indent: -9999px; 
+        background: none; 
+        border: none; 
+        object-fit: cover; 
+        overflow: hidden; 
+        clip-path: inset(0 2px 0 2px);
+    }
+    .BoutonAndroid,
+    .BoutonApple {
+        margin-right: 10px; 
+        font-family:Bebas_Neue ;
+        font-size: 20px;
+        padding-top: 10px;
+    }
+    .BoutonAndroid{
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .pc {
+        display: flex;
+    }
+    
+    .tel {
+        display: none;
+    }
+    .img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+        /*---------- qu'est ce que Lately ----------*/
+        /*---------- qu'est ce que Lately ----------*/
+        /*---------- qu'est ce que Lately ----------*/
+
+
+.P1{
+    height: auto;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.B1{
+    padding: 50px 7%;
+}
+.questceque{
+    font-family: Bebas_Neue;
+    font-size: 64px;
+    margin: 4% 0% 2% 0%;
+}
+.violet {
+    color: #8117EB; 
+}
+
+.billet{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+.billetbox{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Billet1,
+.Billet2 {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.billet1 img,
+.billet2 img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.Billet2 img {
+    transform: rotate(180deg);
+}
+
+.TitreMot,
+.TitreMot2,
+.pbdroit,
+.pbgauche {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: 000;
+    text-align: left;
+    margin: auto;
+}
+
+.TitreMot,
+.TitreMot2 {
+    font-family: Bebas_Neue;
+    font-size: 48px;
+    width: 30%;
+}
+.TitreMot{
+    margin-left: -5%;
+}
+.TitreMot2{
+    margin-left: 50%;
+}
+
+.pbdroit,
+.pbgauche {
+    font-family: Sans_Source_Pro;
+    font-size: 20px;
+    width: 54%; 
+    margin: auto 2% ;
+}
+
+.pbdroit{
+    margin-left: 39%;
+}
+
+
+.option{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.op{
+    font-family: Sans_Source_Pro;
+    font-size: 20px; 
+}
+
+h4{
+    font-family: Bebas_Neue;
+    font-size: 32px;
+    text-align: center;
+    margin: 6% 0%;
+}
+
+.photo,
+.Billeterie,
+.Visuel {
+    width: 31.33%;
+    margin: 1%;
+}
+.imgphoto,
+.imgBilleterie,
+.imgVisuel{
+    width: 100%;
+    height: 377px;
+}
+
+.imgphoto,
+.imgBilleterie,
+.imgVisuel {
+    width: 31.33%;
+    float: left;
+    margin: 1%;
+    height: auto;
+}
+
+
+.imgphoto,
+.imgBilleterie,
+.imgVisuel{
+    width: 31.33%;
+    float: left;
+    margin: 1%;
+    max-width: 300px;
+    max-height: 200px;
+}
+.imgphoto,
+.imgBilleterie,
+.imgVisuel {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%; 
+}
+
+/* Style du conteneur */
+.bientot2 {
+    text-align: center; 
+    width: 100%;
+}
+
+/* Style du bouton */
+.button {
+    background-color: #ffffff; 
+    color: #000000; 
+    padding: 10px 20px; 
+    border: 2px solid #000000; 
+    border-radius: 30px; 
+    cursor: pointer; 
+    text-align: center; 
+    display: inline-block; 
+    text-decoration: none; 
+    font-family: Sans_Source_Pro;
+    margin: 2% auto auto auto ;
+}
+
+/* Style du bouton au survol */
+.button:hover {
+    background-color: #000000; 
+    color: #ffffff; 
+}
+
+
+.Bouton{
+    width: 100%;
+    height: auto;
+}
+.Bout{
+    width: 324px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.Appbouton,
+.Playbouton {
+    display: block;
+    width: auto;
+    height: auto; 
+    text-indent: -9999px; 
+    background: none; 
+    border: none; 
+    margin: 0 auto;
+    object-fit: contain;
+}
+.AppleBouton{
+    margin-right: 10px; 
+    font-family:Bebas_Neue ;
+    font-size: 20px;
+    float: left;
+    
+}
+.Appbouton{
+    background-image: url("./img/app_store.png"); 
+    width: 152px; 
+    height: 45px; 
+    object-fit: cover; 
+    overflow: hidden;
+}
+.AndroidBouton{
+    margin-right: 10px; 
+    font-family:Bebas_Neue ;
+    font-size: 20px;
+    float: left;
+    
+}
+.Playbouton{
+    background-image: url("./img/google_play.png"); 
+    width: 150px; 
+    height: 42px; 
+    object-fit: cover; 
+    overflow: hidden; 
+    clip-path: inset(0 2px 0 2px);
+}
+
+
+@media screen and (max-width: 1024px) {
+    .option {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo,
+    .Billeterie,
+    .Visuel {
+        width: 80%;
+        margin-left: 1%;
+    }
+
+    h4 {
+        font-size: 32px;
+    }
+    .op{
+        text-align: center;
+    }
+    
+    .Bouton {
+        display: flex;
+        justify-content: space-between; 
+    }
+    .Appbouton,
+    .Playbouton{
+        display: block;
+        width: calc(150px - 6%); 
+        height: auto; 
+        text-indent: -9999px; 
+        background: none; 
+        border: none; 
+        object-fit: cover; 
+        overflow: hidden; 
+        clip-path: inset(0 2px 0 2px);
+    }
+    .AndroidBouton,
+    .AppleBouton {
+        margin-right: 10px; 
+        font-family:Bebas_Neue ;
+        font-size: 20px;
+        padding-top: 10px;
+    }
+    .AndroidBouton{
+        margin-top: 0;
+    }
+    
+}
+
+/*dire quelle partie s'affiche*/
+.billetS {
+    display: none;
+}
+
+@media screen and (max-width: 920px) {
+    .billetS {
+        display: block;
+    }
+
+    .billet {
+        display: none;
+    }
+
+    .TitreMot0, .TitreMot22{
+        font-family: Bebas_Neue;
+        font-size: 25px;
+        margin: auto;
+    }
+
+    .pbdroit0, .pbgauche0{
+        font-family: Sans_Source_Pro;
+    }
+}
+
+
+
+@media screen and (max-width: 350px) {
+    .Bouton {
+        display: flex;
+        justify-content: space-between;
+    }
+    .Appbouton,
+    .Playbouton{
+        display: block;
+        width: calc(150px - 40%); 
+        height: auto; 
+        text-indent: -9999px; 
+        background: none; 
+        border: none; 
+        object-fit: cover; 
+        overflow: hidden; 
+        clip-path: inset(0 2px 0 2px);
+    }
+    .AndroidBouton,
+    .AppleBouton {
+        margin-right: 10px; 
+        font-family:Bebas_Neue ;
+        font-size: 20px;
+        padding-top: 10px;
+    }
+    .AndroidBouton{
+        margin-top: 0;
+    }
+}
+
+
+        /*----- qui sommes nous -----*/
+        /*----- qui sommes nous -----*/
+        /*----- qui sommes nous -----*/
+        /*----- qui sommes nous -----*/
+
+
+.P2{
+    height: auto;
+	text-align: left;
+	width: 100%;
+}
+.BlocG{
+    padding: 10px 7%;
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    font-family: Bebas_Neue;
+    font-size: 64px;
+    margin: 2% 0;
+}
+
+.Partie{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2%;
+}
+
+.Partiegauche{
+    width: 48%;
+    margin: 2% 1%;
+}
+.paragraphe{
+    font-family: Sans_Source_Pro;
+    font-size: 20px;
+    margin: 0;
+    text-align: justify;
+}
+
+.Partiedroite{
+    width: 48%;
+    margin: auto 1%;
+}
+
+.carrousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    width: auto;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+    width: 300%;
+}
+
+.img-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+}
+
+.carousel-slide img {
+    height: 100%; 
+    width: auto; 
+    object-fit: contain;
+}
+
+.presentation{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.un,
+.deux,
+.trois{
+    width: 31%;
+    float: left;
+    margin: 1%;
+}
+.imgpun,
+.imgpdeux,
+.imgptrois{
+    width: 100%;
+    height: auto;
+}
+
+.imgun,
+.imgdeux {
+    width: 50%;
+    height: auto; 
+    max-width: 50%; 
+    max-height: 50%;
+}
+
+
+.imgun, .imgdeux {
+    height: 100%;
+    width : auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin: auto;
+    
+}
+
+.lirePlus{
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+}
+.Boutonplus{
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #A800E4; 
+    color: #ffffff; 
+    text-decoration: none; 
+    border: 2px solid #A800E4; 
+    border-radius: 50px; 
+    font-family: Bebas_Neue;
+    font-size: 30px;
+    width: 150px;
+    text-align: center;
+}
+.Boutonplus:hover {
+    background-color: black; 
+    border: 2px solid black; 
+}
+
+.presentation {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .Partiegauche,
+    .Partiedroite {
+        flex: 1 1 100%; 
+        margin: 3% 3%; 
+        width: 100%;
+        align-items: center;
+        height: auto;
+    }
+
+    .Partiegauche {
+        order: 2; 
+        margin-bottom: 2%;
+    }
+
+    .Partiedroite {
+        order: 1; 
+        height: auto;
+        flex: 1 1 50%;
+        margin: 3% auto;
+        max-width: 50%;
+    }
+
+    .presentation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .un,
+    .deux,
+    .trois {
+        width: 100%;
+        margin: auto;
+    }
+    .imgpun,
+    .imgpdeux,
+    .imgptrois{
+        width:50%;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        margin-left: 25%;
+    }
+
+    h4 {
+        font-size: 30px;
+        margin: 2%;
+    }
+    .op{
+        text-align: center;
+        margin: 1%;
+        margin-bottom: 5%;
+    }
+
+    .lirePlus {
+       width: 100%;
+       height: auto; 
+    }
+    .Boutonplus{
+        width: 20%;
+        height: auto; 
+        font-size: 19px;
+    }
+}
+
+
+        /*----- téléchargement -----*/
+        /*----- téléchargement -----*/
+        /*----- téléchargement -----*/
+
+.P4{
+    height: auto;
+	text-align: left;
+	width: 100%;
+    padding-top: 2%;
+}
+.bloc{
+    padding: 10px 7%;
+    height: 100%;
+}
+.defilement{
+    width: 80%;
+    padding: 0% 10% 2% 10%;
+}
+@media screen and (max-width: 400px) {
+    .Bouton {
+        justify-content: space-between;
+    }
+    .Appbouton,
+    .Playbouton{
+        display: block;
+        width: calc(150px - 40%); 
+        height: auto; 
+        text-indent: -9999px; 
+        background: none; 
+        border: none; 
+        object-fit: cover; 
+        overflow: hidden; 
+        clip-path: inset(0 2px 0 2px);
+        margin: 1%;
+    }
+    .AndroidBouton,
+    .AppleBouton {
+        font-family:Bebas_Neue ;
+        font-size: 20px;
+        padding-top: 10px;
+    }
+    .AndroidBouton{
+        margin-top: 0;
+    }
+    .AppleBouton{
+        margin-left: 15%; 
+    }
+}
+
+        /*----- footer -----*/
+        /*----- footer -----*/
+        /*----- footer -----*/
+
+.footer{
+    height: auto;
+	text-align: center;
+	width: 100%;
+}
+.pied{
+    background: linear-gradient(to bottom, #8117EB, #A800E4);
+    width: 100%;
+}
+.piedpage{
+    width: 100%;
+    height: 100%;
+    padding: auto;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 3%;
+    
+}
+.logoblanc{
+
+    width: 40%;
+    margin-top: 2%;
+}
+
+/* Style pour les listes d'éléments */
+.piedpage ul {
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    text-align: left;
+    font-size: 20px;
+    padding-right: 5%;
+    margin-top: 15px;
+}
+
+.blancfoot a{
+    color: #ffffff;
+    font-family:Bebas_Neue;
+    font-size: 25px;
+}
+
+/* Style pour les autres éléments de liste*/
+li a {
+    color: white; 
+    text-decoration: none; 
+    font-family: Sans_Source_Pro;
+    
+    white-space: nowrap;
+} 
+
+
+.fini{
+    width: 100%;
+    height: auto;
+    padding-bottom: 0.5%;
+}
+.fin {
+    color: white;
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .piedpage{
+        width: 100%;
+        height: 100%;
+        padding: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        
+         
+     }
+    .piedpage ul {
+      margin-left: 5%;
+      margin-top: 15px;
+      margin-bottom: 15px;
+       font-size: 16px;
+
+    }
+    .piedpage img{
+        margin: 10px auto auto auto;
+    }
+}
+
+                /*----- générale -----*/
+                /*----- générale -----*/
+                /*----- générale -----*/
+                /*----- générale -----*/
+                /*----- générale -----*/
+
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+
+            /*----- Font -----*/
+            /*----- Font -----*/
+            /*----- Font -----*/
+
+
+    /* Pour les titres h1 */
+@media screen and (max-width: 1420px) {
+    h1 {
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    h1 {
+        font-size: 52px;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    h1 {
+        font-size: 49px;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    h1 {
+        font-size: 46px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    h1 {
+        font-size: 43px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+
+    /* Pour les titres h2 */
+@media screen and (max-width: 1420px) {
+    h2 {
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    h2 {
+        font-size: 52px;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    h2 {
+        font-size: 49px;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    h2 {
+        font-size: 46px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    h2 {
+        font-size: 43px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    h2 {
+        font-size: 40px;
+    }
+}
+
+
+/* Pour les titres h4 */
+@media screen and (max-width: 1420px) {
+    h4 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    h4 {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    h4 {
+        font-size: 24px;
+    }
+}
+
+
+    /* Pour TitreMot */
+@media screen and (max-width: 1420px) {
+    .TitreMot, .TitreMot2 {
+        font-size: 42px;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .TitreMot, .TitreMot2 {
+        font-size: 39px;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    .TitreMot, .TitreMot2 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    .TitreMot, .TitreMot2 {
+        font-size: 33px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .TitreMot, .TitreMot2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .TitreMot, .TitreMot2 {
+        font-size: 27px;
+    }
+}
+
+
+/* Pour les titres h2 avec la classe .questceque */
+@media screen and (max-width: 1420px) {
+    h2.questceque, h2.violet {
+        font-size: 55px;
+       
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    h2.questceque, h2.violet {
+        font-size: 52px;
+        
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    h2.questceque, h2.violet {
+        font-size: 49px;
+        
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    h2.questceque, h2.violet {
+        font-size: 46px;
+        
+    }
+}
+
+@media screen and (max-width: 880px) {
+    h2.questceque, h2.violet {
+        font-size: 43px;
+        
+    }
+}
+
+@media screen and (max-width: 760px) {
+    h2.questceque, h2.violet {
+        font-size: 40px;
+        
+    }
+}
+
+
+/* paragraphe et text billet */
+@media screen and (max-width: 1420px) {
+    .paragraphe, .pbgauche, .pbdroit {
+        font-size: 19px;
+    }
+}
+@media screen and (max-width: 1240px) {
+    .paragraphe, .pbgauche, .pbdroit  {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 1175px) {
+    .paragraphe, .pbgauche, .pbdroit  {
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 1108px) {
+    .paragraphe, .pbgauche, .pbdroit {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 1143px) {
+    .paragraphe, .pbgauche, .pbdroit {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 980px) {
+    .paragraphe, .pbgauche, .pbdroit {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 916px) {
+    .paragraphe, .pbgauche, .pbdroit {
+        font-size: 13px;
+    }
+}
